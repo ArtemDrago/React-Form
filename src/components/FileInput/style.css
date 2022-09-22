@@ -1,0 +1,13 @@
+.dropzone {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 20px 10px;
+   cursor: pointer;
+   background-color: #eee;
+}
+
+.icon {
+   color: #888;
+}
