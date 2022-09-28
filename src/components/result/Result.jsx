@@ -111,11 +111,19 @@ function Result() {
                <List>
                   {files.map((f, index) => (
                      <ListItem key={index}>
-                        <ListItemIcon>
+                        {/* <ListItemIcon>
                            <InsertDriveFile />
-                        </ListItemIcon>
+                        </ListItemIcon> */}
+                        <div className='file-box'>
+                           <img
+                              src={f ? URL.createObjectURL(f) : ''}
+                              className='file'
+                           />
+                        </div>
                         <ListItemText primary={f.name} secondary={f.size} />
+
                      </ListItem>
+
                   ))}
                </List>
             </>

@@ -1,10 +1,11 @@
 import { List, ListItem, ListItemIcon, ListItemText, Paper } from '@mui/material';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Controller } from 'react-hook-form';
-import Dropzone, { useDropzone } from "react-dropzone";
+import Dropzone from "react-dropzone";
 import CloudUpload from "@mui/icons-material/CloudUpload";
 import InsertDriveFile from "@mui/icons-material/InsertDriveFile";
 import './style.css'
+
 
 function FileInput({ control, name }) {
    return (
@@ -46,8 +47,15 @@ function FileInput({ control, name }) {
                            <InsertDriveFile />
                         </ListItemIcon>
                         <ListItemText primary={f.path} secondary={f.size} />
+                        <div className='file-box'>
+                           <img
+                              src={f ? URL.createObjectURL(f) : ''}
+                              className='file'
+                           />
+                        </div>
                      </ListItem>
                   ))}
+
                </List>
             </>}
       />
